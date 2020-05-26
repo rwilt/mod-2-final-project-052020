@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<img src="<%=@seller.photo%>" alt="a picture of <%=@seller.name%>" height=100 width=150>
+
+<h1><%=@seller.name%></h1>
+
+<h4>About Us</h4>
+<%=@seller.bio%>
+
+<h4>Our Produce</h4>
+<%@seller.items.each do |item|%>
+<p><%=link_to item.name, item_path(item.id)%></p>
+<%end%>
+
+<h4>Questions, Comments, Praise? Contact</h4>
+<p>Phone <%=@seller.phone%></p>
+<p>Email <%=@seller.email%></p>
+
+</html>

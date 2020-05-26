@@ -1,1 +1,10 @@
 <h1><%= @buyer.name %> Page</h1>
+
+<p>Phone Number: <%= @buyer.phone %></p>
+<p>Zip Code: <%= @buyer.zip %></p>
+<p>Email: <%= @buyer.email %></p>
+
+<h3><%= @buyer.name %>'s Items</h3>
+<% @buyer.items.each do |x| %>
+    <p><%= x.name %></p>
+<% end %>

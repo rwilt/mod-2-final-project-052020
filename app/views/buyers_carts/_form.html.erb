@@ -1,0 +1,10 @@
+<%= form_for @buyerscart do |f| %>
+    <%= f.label :buyer_id %>
+    <%= f.collection_select :buyer_id, @buyers, :id, :name %>
+
+    <%= f.label :item_id %>
+    <%= f.collection_select :item_id, @items, :id, :name %>
+
+    <%= f.submit %>
+
+<% end %>

@@ -15,7 +15,7 @@ class ShoppingCartItemsController < ApplicationController
     end
     
     def create
-        @shoppingcartitem = BcItem.create(shoppingcartitem_params)
+        @shoppingcartitem = ShoppingCartItem.create(shoppingcartitem_params)
 
         if @shoppingcartitem.valid?
             redirect_to shopping_cart_path(@shoppingcartitem.buyers_cart)
@@ -48,7 +48,7 @@ class ShoppingCartItemsController < ApplicationController
     private
 
     def shoppingcartitem_params
-        params.require(:bc_item).permit(:buyers_cart_id, :item_id)
+        params.require(:shopping_cart_item).permit(:buyers_cart_id, :item_id)
     end
 
     def find_shoppingcartitem

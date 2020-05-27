@@ -8,11 +8,10 @@
 
 Buyer.destroy_all
 Item.destroy_all
-Seller.destroy_all
-BuyersCart.destroy_all
-SellersCart.destroy_all
-BcItem.destroy_all
-ScItem.destroy_all
+ShoppingCart.destroy_all
+ShoppingCartItem.destroy_all
+Purchase.destroy_all
+
 
 hoursofop = ["9-5","10-7", "12-9"]
 zipcodes = [12345,43212,07304,11237,67059,45948]
@@ -23,11 +22,9 @@ images = ["https://i.pinimg.com/originals/ca/f0/d5/caf0d584aa5ac3c706afc3b709303
 20.times do
 Buyer.create(name:Faker::Name.name, phone:Faker::PhoneNumber.cell_phone, zip:zipcodes.sample,email: Faker::Name.first_name + "@gmail.com")
 Item.create(name:Faker::Food.fruits,price: rand(1..10), description:Faker::Food.description, photo: images.sample )
-Seller.create(name:Faker::Name.name, phone:Faker::PhoneNumber.cell_phone, zip:zipcodes.sample,email: Faker::Name.first_name + "@gmail.com", photo:images.sample, bio:Faker::Coffee.notes, hours: hoursofop.sample)
-BuyersCart.create(buyer_id:Buyer.all.sample.id)
-SellersCart.create(seller_id:Seller.all.sample.id)
-ScItem.create(sellers_cart_id:SellersCart.all.sample.id, item_id:Item.all.sample.id)
-BcItem.create(buyers_cart_id:BuyersCart.all.sample.id, item_id:Item.all.sample.id)
+ShoppingCart.create(buyer_id:Buyer.all.sample.id)
+ShoppingCartItem.create(shopping_cart_id:ShoppingCart.all.sample.id, item_id:Item.all.sample.id)
+Purchase.create(buyer_id: Buyer.all.sample.id, item_id: Item.all.sample.id)
 end
 
 puts "seeded joins"

@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  resources :sc_items
-  resources :bc_items
-  resources :sellers_carts
-  resources :buyers_carts
-  resources :sellers
+  resources :shopping_cart_items
+  resources :purchases
+  resources :shopping_carts
   resources :items
   resources :buyers
+
+  get '/home', to: 'home#welcome', as: 'home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

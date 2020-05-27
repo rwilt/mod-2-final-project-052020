@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
-has_many :buyers_carts
-has_and_belongs_to_many :sellers_carts
+has_many :purchases
+has_many :buyers, through: :purchases
+has_many :shopping_cart_items
+has_many :shopping_carts, through: :shopping_cart_items
 end

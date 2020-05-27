@@ -48,7 +48,7 @@ class ShoppingCartItemsController < ApplicationController
     private
 
     def shoppingcartitem_params
-        params.require(:bc_item).permit(:buyers_cart_id, :item_id)
+        params.require(:shopping_cart_item).permit(:buyers_cart_id, :item_id)
     end
 
     def find_shoppingcartitem

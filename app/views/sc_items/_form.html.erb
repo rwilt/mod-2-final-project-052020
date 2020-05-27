@@ -1,0 +1,12 @@
+<%= form_for @scitem do |f| %>
+    <p>
+        <%=f.label :item_id%>
+        <%=f.collection_select :item_id, Item.all, :id, :name%>
+    </p>
+    <p>
+        <%=f.label :sellers_cart_id%>
+        <%=f.collection_select :sellers_cart_id, SellersCart.all, :id, :id%>
+        <!-- ###this shouldnt show the sellers id- it should show their name or it should automatically doit.#### -->
+    </p>
+    <p><%=f.submit "I'm Ready!"%></p>
+<% end %>

@@ -1,3 +1,32 @@
 // Place all the styles related to the SellersCarts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+h1{
+text-align: center;
+
+}
+.item-container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+  }
+
+.items {
+margin: 10px;
+padding: 5px;
+text-align: center;
+width: 100%;
+border-radius: 10px;
+height:10%;
+// margin: 5px;
+background-color: white;
+}
+
+
+.img{
+    height:30px;
+    width:30px;
+    
+}

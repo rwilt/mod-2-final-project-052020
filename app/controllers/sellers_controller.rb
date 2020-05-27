@@ -21,13 +21,13 @@ class SellersController < ApplicationController
     end
     
     def edit
-    @seller = Seller.find(params[:id])
+        @seller = Seller.find(params[:id])
     end
     
     def update
-    @seller = Seller.find(params[:id])
-    @seller = Seller.update(seller_params)
-    redirect_to seller_path(@seller.id)  
+        @seller = Seller.find(params[:id])
+        @seller = Seller.update(seller_params)
+        redirect_to seller_path(@seller.id)  
     end
 
     
@@ -40,6 +40,5 @@ class SellersController < ApplicationController
     def seller_params
         params.require(:seller).permit(:name,:bio,:phone,:email,:zip,:photo)
     end
-
 
 end

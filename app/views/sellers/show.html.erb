@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<img src="<%=@seller.photo%>" alt="a picture of <%=@seller.name%>" height=100 width=150>
+<img class ="seller-photo" src="<%=@seller.photo%>" alt="a picture of <%=@seller.name%>" height=400 width=150>
 
 <h1><%=@seller.name%></h1>
 
@@ -7,7 +7,7 @@
 <%=@seller.bio%>
 
 <h4>Our Produce</h4>
-<%@seller.items.each do |item|%>
+<%@seller.sellers_cart.items.each do |item|%>
 <p><%=link_to item.name, item_path(item.id)%></p>
 <%end%>
 

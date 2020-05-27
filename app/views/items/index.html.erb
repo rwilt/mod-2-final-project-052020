@@ -1,5 +1,18 @@
-<h1>Items</h1>
+<div class="nav">
+    <a href=<%=home_path%>>Login/Logout</a>
+    <a href=<%=buyers_path%>>Home</a>
+    <a href="">Profile</a>
+    <a href=<%=shopping_carts_path%>>Cart</a>
 
+</div>
+
+
+<h1>Items</h1>
+<div class="item-grid">
 <% @items.each do |x| %>
-    <p><%=link_to x.name, item_path(x) %></p>
+   <div class="item"> 
+       <p><img src="<%=x.photo%>" height =100 width=120></p>
+       <p><%=link_to x.name, item_path(x) %></p>
+   </div>
 <% end %>
+</div>

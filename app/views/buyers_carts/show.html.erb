@@ -1,0 +1,6 @@
+<h1><%= @buyerscart.buyer.name %>'s Cart</h1>
+
+<h3>Items in Cart</h3>
+<% @buyerscart.items.each do |x| %>
+    <p><%= x.name %></p>
+<% end %>

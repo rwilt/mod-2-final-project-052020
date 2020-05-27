@@ -10,11 +10,12 @@
 <p><p><img src=<%=@item.photo%> alt=<%=@item.name%> width=auto height=250></p>
 <p>Price: $<%= @item.price %></p>
 <p>Description: <%= @item.description %></p>
+<p>Quantity: <%=@item.quantity%></p>
 
 
 
-<%= form_tag shopping_cart_items_path do %>
+<%= form_tag new_shopping_cart_items_path do %>
+<%= select_tag :quantity, options_for_select(0..@item.quantity), prompt: "Select quantity" %>
     <%= submit_tag("Add to cart", :id=>"button", :class=>"btn btn-secondary", :name=>"commit") %>
   <%end%>
-
 

@@ -40,6 +40,16 @@ class ItemsController < ApplicationController
         end
     end
     
+    def add_to_cart
+        # unless params[:quantity].blank?
+        #     quantity = params[:quantity].to_i 
+        #     quantity.times do 
+                ShoppingCartItems.create(shopping_cart_id: @shopping_cart.id, item_id: @item.id)
+            # end
+        # end
+        redirect_to item_path
+    end
+
     def destroy
         @item.destroy
         

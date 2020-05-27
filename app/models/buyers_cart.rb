@@ -1,4 +1,5 @@
 class BuyersCart < ApplicationRecord
     belongs_to :buyer
-    has_and_belongs_to_many :items
+    has_many :bc_items
+    has_many :items, through: :bc_items
 end

@@ -1,4 +1,5 @@
 class SellersCart < ApplicationRecord
     belongs_to :seller
-    has_and_belongs_to_many :items
+    has_many :sc_items
+    has_many :items, through: :sc_items
 end

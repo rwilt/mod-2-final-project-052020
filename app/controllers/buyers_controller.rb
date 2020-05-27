@@ -1,7 +1,6 @@
 class BuyersController < ApplicationController
     before_action :find_buyer, only: [:show, :edit, :update, :destroy]
 
-
     def index
         @buyers = Buyer.all
     end

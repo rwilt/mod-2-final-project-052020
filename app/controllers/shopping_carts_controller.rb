@@ -1,25 +1,25 @@
 class ShoppingCartsController < ApplicationController
-    before_action :find_buyerscart, only: [:show, :edit, :update, :destroy]
+    before_action :find_shoppingcart, only: [:show, :edit, :update, :destroy]
 
     def index
-        @buyerscarts = BuyersCart.all
+        @shoppingcarts = BuyersCart.all
     end
 
     def show
     end
     
     def new
-        @buyerscart = BuyersCart.new
+        @shoppingcart = ShoppingCart.new
     end
     
     def create
-        @buyerscart = BuyersCart.create(buyers_carts_params)
+        @shoppingcart = ShoppingCart.create(shoppingcart_params)
 
-        if @buyerscart.valid?
-            redirect_to buyers_cart_path(@buyerscart)
+        if @shoppingcart.valid?
+            redirect_to shopping_cart_path(@shoppingcart)
         else
-            flash[:errors] = @buyerscart.errors.full_messages
-            redirect_to new_buyers_cart_path
+            flash[:errors] = @shoppingcart.errors.full_messages
+            redirect_to new_shopping_cart_path
         end
     end
     
@@ -28,27 +28,27 @@ class ShoppingCartsController < ApplicationController
     
     def update
         
-        if @buyerscart.update
-            redirect_to buyers_cart_path(@buyerscart)
+        if @shoppingcart.update(shoppingcart_params)
+            redirect_to shopping_cart_path(@shoppingcart)
         else
-            flash[:errors] = @buyerscart.errors.full_messages
-            redirect_to edit_buyers_cart_path
+            flash[:errors] = @shoppingcart.errors.full_messages
+            redirect_to edit_shopping_cart
         end
     end
     
     def destroy
-        @buyerscart.destroy
-        redirect_to buyers_carts_path
+        @shoppingcart.destroy
+        redirect_to shopping_carts_path
     end
 
 
     private
-    def buyers_carts_params
-        params.require(:buyers_cart).permit(:buyer_id)
+    def shoppingcart_params
+        params.require(:shopping_cart).permit(:buyer_id)
     end
 
-    def find_buyerscart
-        @buyerscart = BuyersCart.find(params[:id])
+    def find_shoppingcart
+        @buyerscart = ShoppingCart.find(params[:id])
     end
 
 end

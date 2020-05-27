@@ -1,42 +1,42 @@
 class ShoppingCartItemsController < ApplicationController
-    before_action :find_bcitem, only: [:show, :edit, :update, :destroy]
+    before_action :find_shoppingcartitem, only: [:show, :edit, :update, :destroy]
 
     def index
-        @bcitems = BcItem.all
+        @shoppingcartitems = ShoppingCartItems.all
     end
 
     def show
     end
     
     def new
-        @bcitem = BcItem.new
-        @buyerscarts = BuyersCart.all
+        @shoppingcartitem = ShoppingCartItem.new
+        @shoppingcart = ShoppingCart.all
         @items = Item.all
     end
     
     def create
-        @bcitem = BcItem.create(bcitem_params)
+        @shoppingcartitem = BcItem.create(shoppingcartitem_params)
 
-        if @bcitem.valid?
-            redirect_to buyers_cart_path(@bcitem.buyers_cart)
+        if @shoppingcartitem.valid?
+            redirect_to shopping_cart_path(@shoppingcartitem.buyers_cart)
         else
-            flash[:errors] = @bcitem.errors.full_messages
-            redirect_to new_bc_item_path
+            flash[:errors] = @shoppingcartitem.errors.full_messages
+            redirect_to new_shopping_cart_item_path
         end
     end
     
     def edit
-        @buyerscarts = BuyersCart.all
+        @shoppingcarts = ShoppingCart.all
         @items = Item.all
     end
     
     def update
     
-        if @bcitem.update(bc_item_params)
-            redirect_to buyers_cart_path(@bcitem.buyers_cart)
+        if @shoppingcartitem.update(shoppingcartitem_params)
+            redirect_to shopping_cart_path(@shoppingcartitem.shopping_cart)
         else
-            flash[:errors] = @bcitem.errors.full_messages
-            redirect_to edit_bc_item_path
+            flash[:errors] = @shoppingcartitem.errors.full_messages
+            redirect_to edit_shopping_cart_path(@shoppingcartitem)
         end
     end
     
@@ -47,11 +47,11 @@ class ShoppingCartItemsController < ApplicationController
 
     private
 
-    def bcitem_params
+    def shoppingcartitem_params
         params.require(:bc_item).permit(:buyers_cart_id, :item_id)
     end
 
-    def find_bcitem
-        @bcitem = BcItem.find(params[:id])
+    def find_shoppingcartitem
+        @shoppingcartitem = ShoppingCartItem.find(params[:id])
     end
 end

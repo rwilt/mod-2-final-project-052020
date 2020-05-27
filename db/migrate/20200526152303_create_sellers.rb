@@ -7,6 +7,7 @@ class CreateSellers < ActiveRecord::Migration[6.0]
       t.integer :phone
       t.integer :zip
       t.string :hours
+      t.string :email
 
       t.timestamps
     end

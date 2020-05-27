@@ -5,7 +5,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer :price
       t.string :description
       t.string :photo
-
+      
       t.timestamps
     end
   end

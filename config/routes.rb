@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :sc_items
+  resources :bc_items
   resources :sellers_carts
   resources :buyers_carts
   resources :sellers

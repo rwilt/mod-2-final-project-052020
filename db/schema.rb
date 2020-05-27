@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_26_155837) do
+ActiveRecord::Schema.define(version: 2020_05_27_003039) do
+
+  create_table "bc_items", force: :cascade do |t|
+    t.integer "buyers_cart_id"
+    t.integer "item_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "buyers", force: :cascade do |t|
     t.string "name"
@@ -23,7 +30,6 @@ ActiveRecord::Schema.define(version: 2020_05_26_155837) do
 
   create_table "buyers_carts", force: :cascade do |t|
     t.integer "buyer_id"
-    t.integer "item_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -37,6 +43,13 @@ ActiveRecord::Schema.define(version: 2020_05_26_155837) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "sc_items", force: :cascade do |t|
+    t.integer "sellers_cart_id"
+    t.integer "item_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "sellers", force: :cascade do |t|
     t.string "name"
     t.string "bio"
@@ -44,13 +57,12 @@ ActiveRecord::Schema.define(version: 2020_05_26_155837) do
     t.integer "phone"
     t.integer "zip"
     t.string "hours"
+    t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "email"
   end
 
   create_table "sellers_carts", force: :cascade do |t|
-    t.integer "item_id"
     t.integer "seller_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

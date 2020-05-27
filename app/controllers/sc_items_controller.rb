@@ -1,0 +1,2 @@
+class ScItemsController < ApplicationController
+end

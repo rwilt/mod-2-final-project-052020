@@ -13,9 +13,14 @@
 <p>Quantity: <%=@item.quantity%></p>
 
 
+<%if flash[:errors]%>
+<%flash[:errors].each do |f| %>
+<%=f%>
+<%end%>
+<%end%>
 
-<%= form_tag shopping_cart_items_path do %>
-<%= select_tag :quantity, options_for_select(0..@item.quantity), prompt: "Select quantity" %>
+<%= form_tag "/items/#{@item.id}/add_to_cart" do %>
+    <%= select_tag :quantity, options_for_select(0..@item.quantity), prompt: "Select quantity" %>
     <%= submit_tag("Add to cart", :id=>"button", :class=>"btn btn-secondary", :name=>"commit") %>
   <%end%>
 

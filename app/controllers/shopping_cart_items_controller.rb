@@ -1,5 +1,5 @@
 class ShoppingCartItemsController < ApplicationController
-    before_action :find_shoppingcartitem, only: [:show, :edit, :update, :destroy]
+    before_action :find_shoppingcartitem, only: [:show, :edit, :update, :destroy, :add_to_cart]
 
     def index
         @shoppingcartitems = ShoppingCartItems.all
@@ -38,10 +38,6 @@ class ShoppingCartItemsController < ApplicationController
             flash[:errors] = @shoppingcartitem.errors.full_messages
             redirect_to edit_shopping_cart_path(@shoppingcartitem)
         end
-    end
-    
-    def destroy
-    
     end
 
 

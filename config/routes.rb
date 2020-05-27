@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :items
   resources :buyers
   
-  post 'shopping_cart_items', to: 'shopping_cart_items#create' #should be create on sc-item?
+   #should be create on sc-item?
   get '/home', to: 'home#welcome', as: 'home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

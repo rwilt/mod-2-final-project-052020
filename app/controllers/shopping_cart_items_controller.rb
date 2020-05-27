@@ -15,7 +15,7 @@ class ShoppingCartItemsController < ApplicationController
     end
     
     def create
-        @shoppingcartitem = BcItem.create(shoppingcartitem_params)
+        @shoppingcartitem = ShoppingCartItem.create(shoppingcartitem_params)
 
         if @shoppingcartitem.valid?
             redirect_to shopping_cart_path(@shoppingcartitem.buyers_cart)

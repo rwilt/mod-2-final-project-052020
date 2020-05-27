@@ -12,13 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_05_27_150721) do
 
-  create_table "bc_items", force: :cascade do |t|
-    t.integer "buyers_cart_id"
-    t.integer "item_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "buyers", force: :cascade do |t|
     t.string "name"
     t.string "phone"
@@ -28,17 +21,12 @@ ActiveRecord::Schema.define(version: 2020_05_27_150721) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "buyers_carts", force: :cascade do |t|
-    t.integer "buyer_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.integer "price"
     t.string "description"
     t.string "photo"
+    t.integer "quantity", default: 100
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -46,31 +34,6 @@ ActiveRecord::Schema.define(version: 2020_05_27_150721) do
   create_table "purchases", force: :cascade do |t|
     t.integer "buyer_id"
     t.integer "item_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "sc_items", force: :cascade do |t|
-    t.integer "sellers_cart_id"
-    t.integer "item_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "sellers", force: :cascade do |t|
-    t.string "name"
-    t.string "bio"
-    t.string "photo"
-    t.integer "phone"
-    t.integer "zip"
-    t.string "hours"
-    t.string "email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "sellers_carts", force: :cascade do |t|
-    t.integer "seller_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

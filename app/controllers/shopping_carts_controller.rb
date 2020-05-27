@@ -2,7 +2,7 @@ class ShoppingCartsController < ApplicationController
     before_action :find_shoppingcart, only: [:show, :edit, :update, :destroy]
 
     def index
-        @shoppingcarts = BuyersCart.all
+        @shoppingcarts = ShoppingCart.all
     end
 
     def show

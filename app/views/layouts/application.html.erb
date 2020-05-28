@@ -16,7 +16,7 @@
         <% if @logged_in_buyer %>
         <li><%= link_to 'Buyer Profile', buyer_path(@logged_in_buyer.id) %></li>
         <li><%= link_to 'Shop', items_path %></li>
-        <li><%= link_to 'Cart', shopping_cart_path(@logged_in_buyer.shopping_cart)%></li> 
+        <li><%= link_to 'Cart', shopping_cart_path(@logged_in_buyer.shopping_cart.id)%></li> 
           <li class='right'>Welcome <%= @logged_in_buyer.username %></li>
           <li class='right'><%= link_to 'Log-out', logout_path, method: :delete %></li>
         <% else %>
@@ -24,11 +24,22 @@
           <li class='right'><%= link_to 'Log-in', new_login_path %></li>
         <% end %>
       </ul>
-
+    
+    <%if !@logged_in_buyer%>
     <div class='welcome-container'>
-      <img class='logo' src="https://d3u03kk87rjfaq.cloudfront.net/wp-content/uploads/2009/06/03145943/farmers-markets.jpg" alt="farmers market">
+      <!-- <img class='logo' src="https://d3u03kk87rjfaq.cloudfront.net/wp-content/uploads/2009/06/03145943/farmers-markets.jpg" alt="farmers market"> -->
       <div class='center-logo-txt'>the Farmers Market</div>
+      <div class='form'>
+        <%= form_for :session, url: login_path do |f| %>
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+        <%= f.label :password %>
+        <%= f.text_field :password %>
+        <%= f.submit %>
+        <% end %>
+      </div>
     </div>
+  <%end%>
     <%= yield %>
   </body>
 </html>

@@ -4,4 +4,8 @@ class Buyer < ApplicationRecord
     has_many :items, through: :purchases
     
     validates :zip, length: { is: 5 }
+
+    has_secure_password
+
+    
 end

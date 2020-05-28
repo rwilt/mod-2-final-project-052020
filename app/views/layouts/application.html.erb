@@ -10,6 +10,22 @@
   </head>
 
   <body>
+      <div class='nav'>
+      <img class='logo' src="https://d3u03kk87rjfaq.cloudfront.net/wp-content/uploads/2009/06/03145943/farmers-markets.jpg" alt="farmers market">
+    </div>
+
+      <ul>
+        <li><%= link_to 'Buyer Home', buyers_path %></li>
+        <li><%= link_to 'Item Home', items_path %></li>
+        <li><%= link_to 'New Item', new_item_path %></li>
+        <% if @logged_in_user %>
+          <li class='right'>Welcome <%= @logged_in_buyer.name %></li>
+          <li class='right'><%= link_to 'Log-out', logout_path, method: :delete %></li>
+        <% else %>
+          <li class='right'><%= link_to 'Sign-up', new_buyer_path %></li>
+          <li class='right'><%= link_to 'Log-in', new_login_path %></li>
+        <% end %>
+      </ul>
     <%= yield %>
   </body>
 </html>

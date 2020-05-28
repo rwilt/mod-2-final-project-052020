@@ -1,5 +1,5 @@
 class ShoppingCartItemsController < ApplicationController
-    before_action :find_shoppingcartitem, only: [:show, :edit, :update, :destroy, :add_to_cart]
+    before_action :find_shoppingcartitem, only: [:show, :edit, :update, :destroy]
 
     def index
         @shoppingcartitems = ShoppingCartItems.all
@@ -10,7 +10,7 @@ class ShoppingCartItemsController < ApplicationController
     
     def new
         @shoppingcartitem = ShoppingCartItem.new
-        @shoppingcart = ShoppingCart.all
+        @shoppingcarts = ShoppingCart.all
         @items = Item.all
     end
     
@@ -18,7 +18,7 @@ class ShoppingCartItemsController < ApplicationController
         @shoppingcartitem = ShoppingCartItem.create(shoppingcartitem_params)
 
         if @shoppingcartitem.valid?
-            redirect_to shopping_cart_path(@shoppingcartitem.buyers_cart)
+            redirect_to shopping_cart_path(@shoppingcartitem.shopping_cart)
         else
             flash[:errors] = @shoppingcartitem.errors.full_messages
             redirect_to new_shopping_cart_item_path

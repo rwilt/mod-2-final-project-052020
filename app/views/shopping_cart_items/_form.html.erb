@@ -1,6 +1,6 @@
-<%= form_for @bcitem do |f| %>
-     <%= f.label :buyers_cart_id %>
-     <%= f.collection_select :buyers_cart_id, @buyerscarts, :id, :buyer_id %>
+<%= form_for @shoppingcartitem do |f| %>
+     <%= f.label :shopping_cart_id %>
+     <%= f.collection_select :shopping_cart_id, @shoppingcarts, :id, :buyer_id %>
 
     <%= f.label :item_id %>
     <%= f.collection_select :item_id, @items, :id, :name %>

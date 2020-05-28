@@ -1,4 +1,5 @@
 class BuyersController < ApplicationController
+    skip_before_action :authorized, only: [:create, :new]
     before_action :find_buyer, only: [:show, :edit, :update, :destroy]
 
     def index
@@ -6,6 +7,12 @@ class BuyersController < ApplicationController
     end
 
     def show
+
+        if @buyer == @logged_in_buyer
+            render :show
+        else
+            redirect_to buyers_path
+        end
     end
     
     def new
@@ -16,7 +23,8 @@ class BuyersController < ApplicationController
         @buyer = Buyer.create(buyer_params)
 
         if @buyer.valid?
-            redirect_to buyer_path(@buyer)
+            session[:buyer_id] = @buyer.id
+            redirect_to buyers_path
         else
             flash[:errors] = @buyer.errors.full_messages
             redirect_to new_buyer_path
@@ -45,7 +53,7 @@ class BuyersController < ApplicationController
     private
 
     def buyer_params
-        params.require(:buyer).permit(:name, :phone, :zip, :email)
+        params.require(:buyer).permit(:name, :phone, :zip, :email, :username, :password)
     end
 
     def find_buyer

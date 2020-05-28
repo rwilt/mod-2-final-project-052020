@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
     before_action :find_item, only: [:show, :edit, :update, :destroy, :add_to_cart]
+    skip_before_action :authorized
 
     def index
         @items = Item.all
@@ -39,16 +40,6 @@ class ItemsController < ApplicationController
             redirect_to edit_item_path(@item)
         end
     end
-    
-    def add_to_cart
-        # unless params[:quantity].blank?
-        #     quantity = params[:quantity].to_i 
-        #     quantity.times do 
-                ShoppingCartItems.create(shopping_cart_id: @shopping_cart.id, item_id: @item.id)
-            # end
-        # end
-        redirect_to item_path
-    end
 
     def destroy
         @item.destroy
@@ -57,22 +48,15 @@ class ItemsController < ApplicationController
     end
 
     def add_to_cart
-        @shopping_cart = ShoppingCart.find_by(params[:id])
+        @shopping_cart = ShoppingCart.find_by(buyer_id: @logged_in_buyer)
         unless params[:quantity].blank?
-            quantity = params[:quantity].to_i 
+        quantity = params[:quantity].to_i 
             quantity.times do 
-               item = ShoppingCartItem.create(shopping_cart_id: @shopping_cart.id, item_id: @item.id)
-           
-            if item.valid?
+                item = ShoppingCartItem.create(shopping_cart_id: @shopping_cart.id, item_id: @item.id)
                 flash[:success] = "Added to Cart."
-                redirect_to shopping_cart_path(@shopping_cart.id)
-            else 
-                flash[:errors] = @item.errors.full_messages
-                redirect_to item_path(@item.id)
+                redirect_to shopping_cart_path(@shopping_cart.id) and return
             end
-        end
-        end
-        
+        end 
     end
     
     def destroy

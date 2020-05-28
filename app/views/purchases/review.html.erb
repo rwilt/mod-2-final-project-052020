@@ -1,1 +1,7 @@
-<p>test</p>
+<p>Please Review your shopping cart before purchasing</p>
+
+<% @buyerscart.items.each do |x| %>
+    <p><%= x.name %></p>
+<% end %>
+
+<%= button_to "Checkout", checkout_path(@logged_in_buyer) %>

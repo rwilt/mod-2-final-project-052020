@@ -7,14 +7,12 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css2?family=Beth+Ellen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
   </head>
 
-  <body>
-      <div class='nav'>
-      <img class='logo' src="https://d3u03kk87rjfaq.cloudfront.net/wp-content/uploads/2009/06/03145943/farmers-markets.jpg" alt="farmers market">
-    </div>
-
-      <ul>
+  <body>  
+      <ul class="nav">
         <li><%= link_to 'Buyer Home', buyers_path %></li>
         <li><%= link_to 'Item Home', items_path %></li>
         <li><%= link_to 'New Item', new_item_path %></li>
@@ -26,6 +24,11 @@
           <li class='right'><%= link_to 'Log-in', new_login_path %></li>
         <% end %>
       </ul>
+
+    <div class='welcome-container'>
+      <img class='logo' src="https://d3u03kk87rjfaq.cloudfront.net/wp-content/uploads/2009/06/03145943/farmers-markets.jpg" alt="farmers market">
+      <div class='center-logo-txt'>the Farmers Market</div>
+    </div>
     <%= yield %>
   </body>
 </html>

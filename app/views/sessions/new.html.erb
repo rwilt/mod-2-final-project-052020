@@ -2,6 +2,7 @@
   <p><%= flash[:error] %></p>
 <% end %>
 
+<div="login-container">
 <%= form_for :session, url: login_path do |f| %>
   <%= f.label :username %>
   <%= f.text_field :username %>
@@ -11,3 +12,4 @@
 
   <%= f.submit %>
 <% end %>
+</div>

@@ -1,5 +1,16 @@
 <h1>Welcome To Our Market</h1>
 
-<h1>We need to add a log in form or an option to create a new user!</h1>
 
-<h3>We need to have the login redirect to buyers 'index'</h3>
+<h1>Items</h1>
+<div class="item-grid">
+<% @items.each do |x| %>
+   <div class="item"> 
+       <p><img src="<%=x.photo%>" height =100 width=120></p>
+       <% if @logged_in_buyer %>
+       <p><%=link_to x.name, item_path(x) %></p>
+       <% else %>
+        <%= x.name %>
+       <% end %>
+   </div>
+<% end %>
+</div>

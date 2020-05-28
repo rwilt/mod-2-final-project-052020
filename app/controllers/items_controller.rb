@@ -54,8 +54,8 @@ class ItemsController < ApplicationController
             quantity.times do 
                 ShoppingCartItem.create(shopping_cart_id: @shopping_cart.id, item_id: @item.id)
                 flash[:success] = "Added to Cart."
-                redirect_to shopping_cart_path(@shopping_cart.id) and return
             end
+            redirect_to shopping_cart_path(@shopping_cart.id)
         end 
     end
     

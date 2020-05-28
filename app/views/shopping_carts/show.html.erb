@@ -1,4 +1,4 @@
-<h1><%= @buyerscart.buyer.name %>'s Cart</h1>
+<h1><%= @buyerscart.buyer.name.titleize %>'s Cart</h1>
 <%if flash[:success] %>
 <%=flash[:success] %>
 <%end%>
@@ -6,3 +6,6 @@
 <% @buyerscart.items.each do |x| %>
     <p><%= x.name %></p>
 <% end %>
+
+
+  <%# button_to "checkout", (), method: :get%>

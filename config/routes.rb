@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   resources :purchases
   resources :items
   resources :buyers
-  resources :shopping_carts do
-    resources :purchases
-  end
+  resources :shopping_carts
+  
+  get 'shopping_carts/:id/purchases', to: 'purchases#review', as: 'review'
+  # get 'shopping_carts/purchases/', to: 'purchases#review', as: 'review'
 
    #should be create on sc-item?
   get '/home', to: 'home#welcome', as: 'home'

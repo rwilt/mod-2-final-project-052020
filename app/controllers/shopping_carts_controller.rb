@@ -48,7 +48,7 @@ class ShoppingCartsController < ApplicationController
     end
 
     def find_shoppingcart
-        @buyerscart = ShoppingCart.find(params[:id])
+        @shoppingcart = ShoppingCart.find(params[:id])
     end
 
 end

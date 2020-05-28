@@ -1,9 +1,9 @@
-<h1><%= @buyerscart.buyer.name.titleize %>'s Cart</h1>
+<h1><%= @shoppingcart.buyer.name.titleize %>'s Cart</h1>
 <%if flash[:success] %>
 <%=flash[:success] %>
 <%end%>
 <h3>Items in Cart</h3>
-<% @buyerscart.items.each do |x| %>
+<% @shoppingcart.items.each do |x| %>
     <p><%= x.name %></p>
 <% end %>
 

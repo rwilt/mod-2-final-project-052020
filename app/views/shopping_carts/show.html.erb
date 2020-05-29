@@ -1,5 +1,6 @@
+<% if @shoppingcart.items != []%>
 <h1><%= @shoppingcart.buyer.name.titleize %>'s Cart</h1>
-
+<%end%>
 
 <div class="cartshow">
 
@@ -19,9 +20,11 @@
 
 <% end %>
 
-<p id="subtotal">Subtotal $<%= @shoppingcart.subtotal %></p>
 <% if @shoppingcart.items == []%>
-<p> Please go to our <%= link_to 'Shop Page', items_path %> to purchase items!</p>
+<h1 style="padding:0; margin:0;">Oh no, your cart's empty!</h1>
+<h2 style="padding:0; margin:0;"> Please go to our <a href="<%=items_path %>">shop page</a> to purchase items!</h2>
+<img src="https://i.imgur.com/rtxptAe.png" style="max-width: 60vw; padding:0px; margin:0px;">
+
 <% else %>
 <%= button_to "Review Cart for Purchase", review_path, method: :get%>
 <% end %>

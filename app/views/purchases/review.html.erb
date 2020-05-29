@@ -1,13 +1,16 @@
-<h2>Please Review your shopping cart before purchasing</h2>
+<h2>Please Review Your Cart Before Purchasing!</h2>
 
 <div class="checkout-container">
 <% @shoppingcart.uniq_item.each do |item, quantity| %>
     <p id="chxout">
-        <img id="ckout"  style="max-height: 20vh;" src=<%=item.photo%> alt="picture of item"> <br><%= item.name %> - $<%= item.price %> <br> Quantity: <%= quantity %> <br> </p>
+        <img id="ckout"  style="max-height: 20vh;" src=<%=item.photo%> alt="picture of item"> <br><%= item.name %> - $<%= item.price %> <br> Quantity: <%= quantity %> <br> 
+ 
+    </p>
+    
 <% end %>
-
+<h2>Subtotal: $<%=@shoppingcart.subtotal%></h2>
 <div class="bttn">
 <%= button_to "Checkout", checkout_path(@logged_in_buyer) %>
-<%= button_to "Return to Cart", shopping_cart_path(@logged_in_buyer), method: :get %>
+<%= button_to "Return to Cart", shopping_cart_path(@logged_in_buyer.shopping_cart), method: :get %>
 </div>
 </div>

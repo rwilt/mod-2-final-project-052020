@@ -19,7 +19,7 @@
    <% end %>
 
 <% end %>
-
+<p id="iteminfo" style="margin:10px;">Subtotal:$<%=@shoppingcart.subtotal%></p>      
 <% if @shoppingcart.items == []%>
 <h1 style="padding:0; margin:0;">Oh no, your cart's empty!</h1>
 <h2 style="padding:0; margin:0;"> Please go to our <a href="<%=items_path %>">shop page</a> to purchase items!</h2>

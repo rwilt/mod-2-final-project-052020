@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :purchases
   resources :items
   resources :buyers
-  resources :shopping_carts, only: [:show]
+  resources :shopping_carts
   
   get 'shopping_carts/:id/purchases/review', to: 'purchases#review', as: 'review'
   post 'shopping_carts/:id/purchases/review', to: 'purchases#checkout', as: 'checkout'

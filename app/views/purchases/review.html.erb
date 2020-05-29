@@ -5,6 +5,6 @@
 <% end %>
 
 
-<%= button_to "Checkout", checkout_path(@logged_in_buyer) %>
-
+<%= button_to "Checkout", checkout_path(@logged_in_buyer) %><br>
+<%= button_to "Return to Cart", shopping_cart_path(@logged_in_buyer), method: :get %>
 

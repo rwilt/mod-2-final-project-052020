@@ -1,12 +1,12 @@
 
 
 
-<h1>Items</h1>
+<h1 id="items">This Week's Picks...</h1>
 <div class="item-grid">
 <% @items.each do |x| %>
    <div class="item"> 
        <p><img src="<%=x.photo%>" height =100 width=120></p>
-       <p><%=link_to x.name, item_path(x) %></p>
+   <p id="item-override"><%=link_to x.name, item_path(x)%></p>
    </div>
 <% end %>
 </div>

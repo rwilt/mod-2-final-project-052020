@@ -23,9 +23,10 @@ class BuyersController < ApplicationController
         @buyer = Buyer.create(buyer_params)
 
         if @buyer.valid?
+            flash[:success] = "Success! Start Shopping!"
             ShoppingCart.create(buyer_id: @buyer.id)
-            session[:buyer_id] = @buyer.id
-            redirect_to buyer_path(@buyer)
+            session[:buyer_id] = @buyer.id  
+            redirect_to buyers_path(@buyer)
         else
             flash[:errors] = @buyer.errors.full_messages
             redirect_to new_buyer_path

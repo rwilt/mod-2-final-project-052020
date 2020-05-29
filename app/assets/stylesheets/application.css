@@ -16,14 +16,37 @@
 
  body{
      margin:0;
+     background-color: #fef2db;
+ 
  }
 
+ #look{
+   text-align: center;
+   color:black;
+   font-size: 3vh;
+   text-shadow: 1px 1px white;
+   font-family: 'Open Sans', sans-serif;
+ }
+ .item-title{
+  text-align: center;
+  color:black;
+  font-size: 10vh;
+  text-shadow: 1px 1px white;
+  font-family: Jost, sans-serif;
+  font-weight: 700;
+  margin:10px 0 5px 0;
+
+ }
  ul.nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #fef2db;
+    padding: 0 20px;
+    font-family: Jost, sans-serif;
+    font-weight: 700;
+   
   }
     li {
   display: inline;
@@ -34,15 +57,17 @@ ul.nav li {float: left;}
 
 ul.nav li a {
   display: block;
-  color: white;
+  color: #f4cd00;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-family: Jost, sans-serif;
+  font-weight: 700;
 }
 
-ul.nav li a:hover:not(.active) {background-color: #111;}
+ul.nav li a:hover:not(.active) {background-color: #ff3b1e;}
 
-ul.nav li a.active {background-color: #4CAF50;}
+ul.nav li a.active {background-color: #ff3b1e;}
 
 ul.nav li.right {float: right;}
 
@@ -51,19 +76,29 @@ ul.nav li.right {float: right;}
   ul.nav li {float: none;}
 }
 
+.active{
+  background-color: #ff3b1e;
+}
+
 .welcome-container{
 display: flex;
 flex-direction: column;
-background-image: url("https://d3u03kk87rjfaq.cloudfront.net/wp-content/uploads/2009/06/03145943/farmers-markets.jpg");
-height: 50vh;
+background-image: url("https://i.imgur.com/zQo56Wt.png");
+background-repeat: no-repeat;
+background-size: 50%;
+margin:0;
+background-position: top;
+height: 90vh;
 justify-content: center;
 align-items: center;
+font-family: 'Open Sans', sans-serif;
 }
 
 
 .logo{
-  width: 100%;
-  max-height: 400px;
+
+  max-height: 90%;
+  display: inline;
 }
 
 .form{
@@ -71,24 +106,48 @@ align-items: center;
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);  */
-  padding: 20px;
+  padding: 10px;
   background-color: white;
   border-radius: 25px;
+  
 }
 
 
 .center-logo-txt{
-    color: white;
-    font-size:10vh;
-    text-shadow: 3px 3px #9c0c0d;
-    font-family: 'Permanent Marker';
-    font-weight: 400; 
-
+    margin-top: 420px;
+    color: #ff3b1e;
+    font-size:9vh;
+    text-shadow: 3px 3px #d9e4d5;
+    font-family: Jost, sans-serif;
+    font-weight: 700;
 }
 
 
 
-.login-container{
-margin: 40px;
+hr {
+  background-color: black;
+  border: none;
+  height: 1px;
+}
+
+#welcome-name{
+  color: #ff3b1e;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+
+}
+
+.item-grid{
+ display:inline-flexbox;
+}
+.item{
+
+  display:inline-flexbox;
+  color:black;
+  font-size: 3vh;
+  text-shadow: 1px 1px white;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
 
 }

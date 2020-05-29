@@ -13,7 +13,15 @@
  *= require_tree .
  *= require_self
  */
-
+ html {
+  scroll-behavior: smooth;
+ 
+}
+section {
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+}
  body{
      margin:0;
      background-color: #fef2db;

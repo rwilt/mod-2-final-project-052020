@@ -10,10 +10,16 @@
 <!-- </div> -->
 </div>
 
+<!-- we should clean this up -->
 <div class="item-container">
  <h2><%= @buyer.name.titleize%>'s Order History:</h2>
-<% @buyer.items.each do |x| %>
-    <p><%= x.name %></p>
+ <%if @logged_in_buyer.purchases.empty?%>
+ <img id="cart-empty" src="https://i.imgur.com/hz8UlJx.png" height=200>
+ <p style="text-align: center;">You must be hungry. <%=link_to "Care to Purchase some veggies?", items_path%></p>
+<%else%>
+<% @buyer.items.uniq.each do |x| %>
+    <p style="text-align: center;"><%=link_to x.name, item_path(x.id) %> - JOSH - ADD QUANTITIES?!</p>
 <% end %>
+<%end%>
 </div>
 </div>

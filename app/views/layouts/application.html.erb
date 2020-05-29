@@ -12,6 +12,7 @@
   </head>
 
   <body>  
+  <section>
       <ul class="nav">
         <% if @logged_in_buyer %>
         <li><%= link_to 'Buyer Profile', buyer_path(@logged_in_buyer.id) %></li>
@@ -39,7 +40,10 @@
         <% end %>
       </div>
     </div>
+  </section>
   <%end%>
     <%= yield %>
+<section>
   </body>
+</section>
 </html>

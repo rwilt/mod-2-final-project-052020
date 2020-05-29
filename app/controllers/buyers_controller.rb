@@ -26,7 +26,7 @@ class BuyersController < ApplicationController
             flash[:success] = "Success! Start Shopping!"
             ShoppingCart.create(buyer_id: @buyer.id)
             session[:buyer_id] = @buyer.id  
-            redirect_to buyers_path(@buyer)
+            redirect_to buyers_path(@buyer.id)
         else
             flash[:errors] = @buyer.errors.full_messages
             redirect_to new_buyer_path
@@ -39,7 +39,7 @@ class BuyersController < ApplicationController
     def update
 
         if @buyer.update(buyer_params)
-            redirect_to buyer_path(@buyer)
+            redirect_to buyer_path(@buyer.id)
         else
             flash[:errors] = @buyer.errors.full_messages
             redirect_to edit_buyer_path

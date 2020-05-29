@@ -17,10 +17,10 @@
         <% if @logged_in_buyer %>
         <li><%= link_to 'Buyer Profile', buyer_path(@logged_in_buyer.id) %></li>
         <li><%= link_to 'Shop', items_path %></li>
-        <li><a href="<%=shopping_cart_path(@logged_in_buyer.shopping_cart.id)%>"><img src="https://i.imgur.com/rK8sj9g.png" style="max-height: 35px;"></a></li>
-
+        <li><a id="cartnav" href="<%=shopping_cart_path(@logged_in_buyer.shopping_cart.id)%>"><img src="https://i.imgur.com/rK8sj9g.png" style="max-height: 35px;"></a></li>
+        <%if @shoppingcart!= nil%>
         <li id="totalcart"><%= @shoppingcart.cart_total %></li>
-
+        <%end%>
           <li class='right' id='welcome-name'>Welcome back, <%= @logged_in_buyer.username.titleize %>!</li>
           <li class='right'><%= link_to 'Log-out', logout_path, method: :delete %></li>
         <% else %>

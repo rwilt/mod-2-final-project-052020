@@ -5,6 +5,7 @@ class BuyersController < ApplicationController
     def show
 
         if @buyer == @logged_in_buyer
+            @shoppingcart = ShoppingCart.find_by(buyer_id: @logged_in_buyer.id)
             render :show
         else
             redirect_to buyers_path

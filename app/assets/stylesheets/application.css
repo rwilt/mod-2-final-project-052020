@@ -124,10 +124,16 @@ font-family: 'Open Sans', sans-serif;
   display: block;
   color: #ff3b1e;
   text-align: center;
-  padding: 14px 16px 0 1px;
+  padding: 14px 0px 0px 0px;
+  margin-left: -15px;
   text-decoration: none;
   font-family: Jost, sans-serif;
   font-weight: 700;
+  font-size: 2vh;
+}
+
+a:hover #totalcart {
+  color: gold;
 }
 
 
@@ -157,7 +163,13 @@ hr {
 }
 
 
+#cartnav{
+  color: #ff3b1e;
+  display: block;
+  text-align: center;
+  padding: 7px 16px;
 
+}
 
 .item-grid{
  display:inline-flexbox;

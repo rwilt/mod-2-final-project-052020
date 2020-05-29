@@ -3,7 +3,7 @@
 <div class="checkout-container">
 <% @shoppingcart.uniq_item.each do |item, quantity| %>
     <p id="chxout">
-        <img id="ckout"  style="max-height: 20vh;" src=<%=item.photo%> alt="picture of item"> <br><%= item.name %> - $<%= item.price %> <br> Quantity: <%= quantity %> <br> 
+        <img id="ckout"  style="max-height: 30vh;" src=<%=item.photo%> alt="picture of item"> <br><%= item.name %> - $<%= item.price %> <br> Quantity: <%= quantity %> <br> 
  
     </p>
     

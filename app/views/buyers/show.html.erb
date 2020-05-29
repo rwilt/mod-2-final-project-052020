@@ -1,10 +1,19 @@
-<h1><%= @buyer.name.titleize %> Page</h1>
-
+<h1><%= @buyer.name.titleize %>'s Profile</h1>
+<div class="container">
+<div class="contact">
+    <h2>Your Contact Info:</h2>
 <p>Phone Number: <%= @buyer.phone %></p>
 <p>Zip Code: <%= @buyer.zip %></p>
 <p>Email: <%= @buyer.email %></p>
+<!-- <div class="form"> -->
+<p id="update-form"><%= link_to "Update Info", edit_buyer_path(@logged_in_buyer.id)%></p>
+<!-- </div> -->
+</div>
 
-<h3><%= @buyer.name %>'s Items</h3>
+<div class="item-container">
+ <h2><%= @buyer.name.titleize%>'s Order History:</h2>
 <% @buyer.items.each do |x| %>
     <p><%= x.name %></p>
 <% end %>
+</div>
+</div>

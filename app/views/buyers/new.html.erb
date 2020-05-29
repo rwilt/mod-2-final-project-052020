@@ -4,6 +4,16 @@
     <% end %>
 <% end %>
 
+<% if flash[:success] %>
+<%= flash[:succes]%>
+<%end%>
+
+<hr>
+
 <h1>New Buyer Form</h1><br>
 
+<div class= "new-buyer-container">
+<div class="new-buyer-form"
 <%= render 'form' %>
+</div>
+</div>

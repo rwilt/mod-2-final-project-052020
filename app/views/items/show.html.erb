@@ -1,10 +1,10 @@
 
 
 <h1><%= @item.name %></h1>
-<p><p><img src=<%=@item.photo%> alt=<%=@item.name%> width=auto height=250></p>
-<p>Price: $<%= @item.price %></p>
-<p>Description: <%= @item.description %></p>
-<p>Quantity: <%=@item.quantity%></p>
+<p id="item-show"><p><img src=<%=@item.photo%> alt=<%=@item.name%> width=auto height=250></p>
+<p id="item-show">Price: $<%= @item.price %></p>
+<p id="item-show">Description: <%= @item.description %></p>
+<p id="item-show">Quantity: <%=@item.quantity%></p>
 
 
 <%if flash[:errors]%>

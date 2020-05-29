@@ -1,22 +1,22 @@
 <%= form_for @buyer do |f| %>
      <%= f.label :name %>
      <%= f.text_field :name %>
-
+    <br>
     <%= f.label :phone %>
     <%= f.text_field :phone %>
-
+    <br>
     <%= f.label :zip, "Zipcode" %>
     <%= f.number_field :zip %>
-
+    <br>
     <%= f.label :email %>
     <%= f.text_field :email %>
-
+    <br>
     <%= f.label :username %>
     <%= f.text_field :username %>
-
+    <br>
     <%= f.label :password %>
     <%= f.text_field :password %>
-
-    <%= f.submit %>
+    <br>
+    <%= f.submit "Let's Go!" %>
   
 <% end %>

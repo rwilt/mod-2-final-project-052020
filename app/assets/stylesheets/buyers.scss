@@ -1,3 +1,97 @@
 // Place all the styles related to the Buyers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+h1{
+  text-align: center;
+  font-size: 10vh;
+  color: black;
+  text-shadow: 2px 3px #f4cd00;
+}
+.container{
+  display: flex;
+
+  height: 100vh;
+  justify-items: center;
+}
+.contact{
+  display: flexbox;
+  
+  float: left;
+  width: 30vw;
+  text-align: center;
+  // text-shadow: 2px 2px #f4cd00;
+  font-family: Jost, sans-serif;
+  font-weight: 700;
+}
+
+.item-container{
+  
+  float: left;
+  width: 70vw;
+  justify-items: center;
+  font-family: Jost, sans-serif;
+    font-weight: 700;
+    
+}
+
+
+ h2{
+  text-align: center;
+  
+  font-family: Jost, sans-serif;
+    font-weight: 700;
+}
+.new-buyer-container{
+  font-family: Jost, sans-serif;
+  font-weight: 700;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+}
+.new-buyer-form{
+  font-family: Jost, sans-serif;
+    font-weight: 700;
+  margin: 20px;
+  padding: 35px;
+  background-color: #f4cd00;
+  border-radius: 25px;
+  width: 10vw;
+//   border: 1px solid black;
+
+}
+
+p a {
+color:black;
+text-decoration: underline;
+
+}
+
+p a:hover{
+  color:#fe5c44;
+  
+  text-shadow: 1px 1px #f4cd00;
+}
+
+.form-wrapper{
+  margin-left: 40%;
+  margin-right: auto;
+  padding: 5px;
+  display: flex;
+
+}
+
+.update-form{
+  // align-content: center;
+  padding: 40px; 
+  // align-items: center;
+  // justify-items: center;
+  text-align: justify;
+  // display: inline-block;
+  background-color: white;
+  border-radius: 25px;
+  font-family: Jost, sans-serif;
+  font-weight: 700;
+  }
+  

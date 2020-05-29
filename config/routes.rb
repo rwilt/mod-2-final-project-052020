@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   resources :buyers
   resources :shopping_carts
   
-  get 'shopping_carts/:id/purchases', to: 'purchases#review', as: 'review'
-  post 'shopping_carts/:id/purchases', to: 'purchases#checkout', as: 'checkout'
-  # get 'shopping_carts/:id/purchases', to: 'purchases#review', as: 'review'
+  get 'shopping_carts/:id/purchases/review', to: 'purchases#review', as: 'review'
+  post 'shopping_carts/:id/purchases/review', to: 'purchases#checkout', as: 'checkout'
+  get 'shopping_carts/:id/purchases/confirmation', to: 'purchases#confirmation', as: 'confirm'
   # get 'shopping_carts/:id/purchases', to: 'purchases#review', as: 'review'
 
    #should be create on sc-item?

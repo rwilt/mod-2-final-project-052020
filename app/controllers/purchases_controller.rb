@@ -12,11 +12,12 @@ class PurchasesController < ApplicationController
         end
         @shoppingcart.items = []
 
-        redirect_to buyer_path(@logged_in_buyer)
+        redirect_to confirm_path
     end
     
 
     def confirmation_page
+
     end
 
 end

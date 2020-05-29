@@ -1,7 +1,10 @@
 <p>Please Review your shopping cart before purchasing</p>
 
-<% @shoppingcart.items.each do |x| %>
-    <p><%= x.name %></p>
+<% @shoppingcart.uniq_item.each do |item, quantity| %>
+    <h3>Name: <%= item.name %> <br> Price: $<%= item.price %> <br> Quantity: <%= quantity %> <br> <img src=<%=item.photo%> alt="picture of item"> </h3>
 <% end %>
 
+
 <%= button_to "Checkout", checkout_path(@logged_in_buyer) %>
+
+

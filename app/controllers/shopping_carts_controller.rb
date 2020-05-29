@@ -1,5 +1,5 @@
 class ShoppingCartsController < ApplicationController
-    before_action :find_shoppingcart, only: [:show, :edit, :update, :destroy]
+    before_action :find_shoppingcart, only: [:show, :update, :destroy]
 
     def index
         @shoppingcarts = ShoppingCart.all
@@ -23,22 +23,17 @@ class ShoppingCartsController < ApplicationController
         end
     end
     
-    def edit
-    end
-    
     def update
-        
-        if @shoppingcart.update(shoppingcart_params)
-            redirect_to shopping_cart_path(@shoppingcart)
-        else
-            flash[:errors] = @shoppingcart.errors.full_messages
-            redirect_to edit_shopping_cart
-        end
+        quantity = params[:quantity].to_i
+        @shoppingcart.change_item_quantity(params[:item_id], quantity)
+
+        redirect_to @shoppingcart
     end
     
     def destroy
-        @shoppingcart.destroy
-        redirect_to shopping_carts_path
+        @shoppingcart.delete_item(params[:item_id])
+
+        redirect_to shopping_cart_path(@shoppingcart)
     end
 
 

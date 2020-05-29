@@ -3,9 +3,26 @@
 <%=flash[:success] %>
 <%end%>
 <h3>Items in Cart</h3>
-<% @shoppingcart.items.each do |x| %>
-    <p><%= x.name %></p>
+
+
+<% @shoppingcart.uniq_item.each do |item, quantity| %>
+    <h3>Name: <%= item.name %> <br> Price: $<%= item.price %> <br> <img src=<%=item.photo%> alt="picture of item"> </h3>
+          <%= form_for @shoppingcart do |f| %>
+        <%= hidden_field_tag 'item_id', item.id%>
+        <%= select_tag :quantity, options_for_select(0..item.quantity), value: quantity, onchange: 'this.form.submit();', prompt: "#{quantity}" %>
+        <%= button_to "Delete Item", shopping_cart_path(f), method: :delete %>
+   <% end %>
+
 <% end %>
 
+<h3>Subtotal</h3>
+<p>$<%= @shoppingcart.subtotal %></p>
 
- <%= button_to "Review", review_path, method: :get %>
+
+
+
+<% if @shoppingcart.items == []%>
+<p> Please go to our <%= link_to 'Shop Page', items_path %> to purchase items!</p>
+<% else %>
+<%= button_to "Review Cart for Purchase", review_path, method: :get %>
+<% end %>

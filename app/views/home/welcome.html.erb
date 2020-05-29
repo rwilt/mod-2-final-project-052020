@@ -1,6 +1,6 @@
 <section>
 <hr>
-<h2 id="look">Shop Farm Fresh, Without Leaving Your Home</h2>
+<h2 id="look">Shop Farm Fresh, Without Leaving Your Home!</h2>
 <p id="look">Have a look at what's for sale, then login or sign up for the full experience.</p>
 
 <p class="item-title">This Week's Picks:</p>
@@ -9,9 +9,9 @@
    <div class="item"> 
        <p><img src="<%=x.photo%>" height =100 width=120></p>
        <% if @logged_in_buyer %>
-       <p><%=link_to x.name, item_path(x) %></p>
+       <p id="wel-item-scr"><%=link_to x.name, item_path(x) %></p>
        <% else %>
-        <%= x.name %>
+        <p id="wel-item-scr"><%= x.name %></p>
        <% end %>
    </div>
 <% end %>

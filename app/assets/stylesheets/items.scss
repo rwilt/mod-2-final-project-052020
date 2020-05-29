@@ -22,8 +22,6 @@ h1#items{
     
     padding: 45px;
     margin: 5px;
-    
-
     background-color: #fef2db;
     text-align: center;
 
@@ -34,6 +32,20 @@ a{
 
 }
 
-p#item-show{
-font-family: 'Open Sans', sans-serif;
+.itemform{
+    display:flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction:column;
+    
+}
+
+.itemdiv{
+    display:flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction:column;  
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    text-align: justify;
 }

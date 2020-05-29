@@ -1,3 +1,34 @@
 // Place all the styles related to the shopping_carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+#quant{
+    font-size:2vh;
+    font-family: Jost, 'sans-serif';
+    text-align: center;
+}
+
+
+#subtotal{
+    font-size:4vh;
+    font-family: Jost, 'sans-serif';
+    padding:0px;
+    text-shadow: 1px 2px #f4cd00;
+    margin-top:5px;
+}
+
+
+#iteminfo{
+    font-size:5vh;
+    font-family: Jost, 'sans-serif';
+    text-shadow: 1px 1px #f4cd00;
+    padding:0px;
+    margin:0px;
+}
+
+
+.cartshow{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}

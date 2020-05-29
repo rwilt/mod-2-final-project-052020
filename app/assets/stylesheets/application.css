@@ -156,6 +156,18 @@ hr {
   font-size: 3vh;
   text-shadow: 1px 1px white;
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding:10px;
+}
 
+#wel-item-scr{
+  font-family: Jost, sans-serif;
+  font-weight: 700;
+ 
+}
+
+a{
+  font-family: Jost, sans-serif;
+  font-weight: 700;
+  text-decoration: none;
 }

@@ -1,11 +1,13 @@
 
 
 <h1><%= @item.name %></h1>
-<p id="item-show"><p><img src=<%=@item.photo%> alt=<%=@item.name%> width=auto height=250></p>
-<p id="item-show">Price: $<%= @item.price %></p>
-<p id="item-show">Description: <%= @item.description %></p>
-<p id="item-show">Quantity: <%=@item.quantity%></p>
+<div class="itemdiv">
+<p id="item-show"><p><img style="margin-left:auto; margin-right: auto; display:block;" src=<%=@item.photo%> alt=<%=@item.name%> width=auto height=250></p>
 
+<p id="item-show"> <%= @item.description %></p>
+<p id="item-show">Price: $<%= @item.price %></p>
+<p id="item-show">Quantity: <%=@item.quantity%></p>
+</div>
 
 <%if flash[:errors]%>
 <%flash[:errors].each do |f| %>
@@ -13,8 +15,10 @@
 <%end%>
 <%end%>
 
+<div class="itemform">
 <%= form_tag "/items/#{@item.id}/add_to_cart" do %>
     <%= select_tag :quantity, options_for_select(0..@item.quantity), prompt: "Select quantity" %>
     <%= submit_tag("Add to cart", :id=>"button", :class=>"btn btn-secondary", :name=>"commit") %>
   <%end%>
+</div>
 

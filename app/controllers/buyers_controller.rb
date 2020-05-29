@@ -46,6 +46,7 @@ class BuyersController < ApplicationController
         @buyer.destroy
         redirect_to buyers_path
     end
+    
 
 
     private

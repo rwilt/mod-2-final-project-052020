@@ -11,19 +11,18 @@ h1{
 }
 .container{
   display: flex;
-
   height: 100vh;
   justify-items: center;
 }
 .contact{
   display: flexbox;
-  
   float: left;
-  width: 30vw;
+  width: 40vw;
   text-align: center;
   // text-shadow: 2px 2px #f4cd00;
   font-family: Jost, sans-serif;
   font-weight: 700;
+
 }
 
 .item-container{
@@ -33,16 +32,30 @@ h1{
   justify-items: center;
   font-family: Jost, sans-serif;
     font-weight: 700;
-    
+   
 }
 
+.suggestion-container{
+  display:flex;
+  flex-direction: column;
+  width: 40vw;
+  justify-items: center;
+  font-family: Jost, sans-serif;
+  font-weight: 700;
+  text-align: center;
+
+  align-items: center;
+
+}
 
  h2{
-  text-align: center;
-  
+  text-align: center; 
   font-family: Jost, sans-serif;
-    font-weight: 700;
+  font-weight: 700;
+  text-shadow: 1px 1px #f4cd00;
 }
+
+
 .new-buyer-container{
   font-family: Jost, sans-serif;
   font-weight: 700;

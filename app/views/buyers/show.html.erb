@@ -18,8 +18,15 @@
  <p style="text-align: center;">You must be hungry. <%=link_to "Care to Purchase some veggies?", items_path%></p>
 <%else%>
 <% @buyer.uniq_item.each do |item, quantity| %>
-<p style="text-align: center;">Name: <%=link_to item.name, item_path(item.id) %> <br> Price: $<%= item.price %> <br> Quantity: <%= quantity %> <br> <img src=<%=item.photo%> alt="picture of item"></p>
+<p style="text-align: center;"><%=link_to item.name, item_path(item.id) %> <br> Price: $<%= item.price %> <br> Quantity: <%= quantity %> <br> <img style="max-height: 100px;" src="<%=item.photo%>" alt="picture of item"></p>
 <% end %>
 <%end%>
+</div>
+<div class='suggestion-container'>
+    <h2>May we suggest...?</h2>
+    <%@buyer.suggest_items.each do |i|%>
+    <img style="max-width: 10vw" src="<%=Item.find(i).photo%>">
+    <p><%=link_to Item.find(i).name, item_path(i)%></p>
+    <%end%>
 </div>
 </div>

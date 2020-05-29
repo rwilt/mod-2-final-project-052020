@@ -18,5 +18,14 @@ class Buyer < ApplicationRecord
         end
         hash
     end
+
+    def suggest_items
+    ids = ShoppingCartItem.all.collect do |item|
+        item.item_id
+    end
+    ids.collect do |id|
+     Item.find_by(id:id).id
+    end.uniq.sample(3)
+    end
     
 end

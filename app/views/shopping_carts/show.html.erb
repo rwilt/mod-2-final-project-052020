@@ -1,10 +1,13 @@
 <h1><%= @shoppingcart.buyer.name.titleize %>'s Cart</h1>
-<%if flash[:success] %>
-<p><%=flash[:success] %></p>
-<%end%>
+
+
 <div class="cartshow">
+
 <% @shoppingcart.uniq_item.each do |item, quantity| %>
-    <img src=<%=item.photo%> alt="picture of item"> </h2>
+<%if flash[:success] %>
+<p style="font-family:Jost,'sans-serif';"><%=flash[:success] %></p>
+<%end%>
+    <img style="max-height: 20vh;" src="<%=item.photo%>" alt="picture of item"> </h2>
     <div class="cartshow">
          <p id="iteminfo"><%= item.name %> - $<%= item.price %></p>  
    

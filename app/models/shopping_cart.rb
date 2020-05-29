@@ -3,6 +3,13 @@ class ShoppingCart < ApplicationRecord
     has_many :shopping_cart_items
     has_many :items, through: :shopping_cart_items
 
+    def cart_total
+        total = 0
+        self.items.each do |x|
+            total += 1
+        end
+        total
+    end
 
     def subtotal
         cost = 0

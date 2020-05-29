@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
         if buyer && buyer.authenticate(session_params[:password])
             session[:buyer_id] = buyer.id
-            redirect_to buyer
+            redirect_to buyer_path(@logged_in_buyer.id)
         else
             flash[:error] = "Sorry try again."
             redirect_to new_login_path

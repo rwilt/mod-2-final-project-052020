@@ -2,10 +2,6 @@ class BuyersController < ApplicationController
     skip_before_action :authorized, only: [:create, :new]
     before_action :find_buyer, only: [:show, :edit, :update, :destroy]
 
-    def index
-        @buyers = Buyer.all
-    end
-
     def show
 
         if @buyer == @logged_in_buyer
@@ -26,7 +22,7 @@ class BuyersController < ApplicationController
             flash[:success] = "Success! Start Shopping!"
             ShoppingCart.create(buyer_id: @buyer.id)
             session[:buyer_id] = @buyer.id  
-            redirect_to buyers_path(@buyer.id)
+            redirect_to buyer_path(@buyer.id)
         else
             flash[:errors] = @buyer.errors.full_messages
             redirect_to new_buyer_path

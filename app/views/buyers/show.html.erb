@@ -17,8 +17,8 @@
  <img id="cart-empty" src="https://i.imgur.com/hz8UlJx.png" height=200>
  <p style="text-align: center;">You must be hungry. <%=link_to "Care to Purchase some veggies?", items_path%></p>
 <%else%>
-<% @buyer.items.uniq.each do |x| %>
-    <p style="text-align: center;"><%=link_to x.name, item_path(x.id) %> - JOSH - ADD QUANTITIES?!</p>
+<% @buyer.uniq_item.each do |item, quantity| %>
+<p style="text-align: center;">Name: <%=link_to item.name, item_path(item.id) %> <br> Price: $<%= item.price %> <br> Quantity: <%= quantity %> <br> <img src=<%=item.photo%> alt="picture of item"></p>
 <% end %>
 <%end%>
 </div>

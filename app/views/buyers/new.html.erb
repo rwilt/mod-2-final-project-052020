@@ -1,8 +1,4 @@
-<% if flash[:errors] %>
-    <% flash[:errors].each do |x| %>
-        <p><%= x %></p>
-    <% end %>
-<% end %>
+
 
 <% if flash[:success] %>
 <%= flash[:succes]%>
@@ -11,7 +7,11 @@
 <hr>
 
 <h1>New Buyer Form</h1><br>
-
+<% if flash[:errors] %>
+    <% flash[:errors].each do |x| %>
+        <p style="font-family: Jost, 'sans-serif';text-align:center;color:tomato;"><%= x %></p>
+    <% end %>
+<% end %>
 <div class= "new-buyer-container">
 <div class="new-buyer-form">
 <%= render 'form' %>

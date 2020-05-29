@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
     before_action :find_item, only: [:show, :edit, :update, :destroy, :add_to_cart]
-    skip_before_action :authorized
+    # skip_before_action :authorized
 
     def index
         @items = Item.all

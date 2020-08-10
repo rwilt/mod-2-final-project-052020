@@ -42,7 +42,7 @@ The Farmers Market is an app to help you support local farmers from the comfort 
 <br>
 <img src="./photos/shot1.png" alt="screenshot of project" height=300px>
 
-<img src="./photos/shot2.png" alt="screenshot of project" height=300px>
+<img src="./photos/shot4.png" alt="screenshot of project" height=300px>
 
 <img src="./photos/shot3.png" alt="screenshot of project" height=300px>
 

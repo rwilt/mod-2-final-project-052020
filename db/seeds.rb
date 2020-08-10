@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Buyer.destroy_all
+# Buyer.destroy_all
 Item.destroy_all
 ShoppingCart.destroy_all
 ShoppingCartItem.destroy_all
@@ -20,7 +20,7 @@ images = ["https://i.pinimg.com/originals/ca/f0/d5/caf0d584aa5ac3c706afc3b709303
 
 
 20.times do
-Buyer.create(name:Faker::Name.name, phone:Faker::PhoneNumber.cell_phone, zip:zipcodes.sample,email: Faker::Name.first_name + "@gmail.com")
+Buyer.create(name:Faker::Name.name, phone:Faker::PhoneNumber.cell_phone, zip:zipcodes.sample,email: Faker::Name.first_name + "@gmail.com", username: Faker::Name.first_name)
 Item.create(name:Faker::Food.fruits,price: rand(1..10), description:Faker::Food.description, photo: images.sample )
 ShoppingCart.create(buyer_id:Buyer.all.sample.id)
 ShoppingCartItem.create(shopping_cart_id:ShoppingCart.all.sample.id, item_id:Item.all.sample.id)
